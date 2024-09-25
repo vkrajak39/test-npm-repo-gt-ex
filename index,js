@@ -1,0 +1,72 @@
+const printMap = () => {
+    const dataFeildsMap = new Map();
+
+    dataFeildsMap.set("policyType", "HOQualification");
+    dataFeildsMap.set("coverageForm", "HOQualification");
+    dataFeildsMap.set("occupies", "HOQualification");
+
+    dataFeildsMap.set("effectivedate", "HOPolicyInfo");
+
+    dataFeildsMap.set("locationType", "HODwelling");
+    dataFeildsMap.set("usage", "HODwelling");
+    dataFeildsMap.set("fireProtectionClass", "HODwelling");
+    dataFeildsMap.set("occupancy", "HODwelling");
+    dataFeildsMap.set("fireAlarm", "HODwelling");
+
+    dataFeildsMap.set("yearBuilt", "HODwellingConstruction");
+    dataFeildsMap.set("construction", "HODwellingConstruction");
+    dataFeildsMap.set("numberOfStories", "HODwellingConstruction");
+    dataFeildsMap.set("garage", "HODwellingConstruction");
+    dataFeildsMap.set("foundation", "HODwellingConstruction");
+    dataFeildsMap.set("roof", "HODwellingConstruction");
+    dataFeildsMap.set("primaryHeating", "HODwellingConstruction");
+    dataFeildsMap.set("secondaryHeating", "HODwellingConstruction");
+    dataFeildsMap.set("plumbing", "HODwellingConstruction");
+    dataFeildsMap.set("wiring", "HODwellingConstruction");
+    dataFeildsMap.set("electricalSystem", "HODwellingConstruction");
+
+    dataFeildsMap.set("coverageA_Coinsurance", "HOCoverage");
+    dataFeildsMap.set("coverageC_coverageLimit", "HOCoverage");
+    dataFeildsMap.set("coverageCValuationMethod", "HOCoverage");
+    dataFeildsMap.set("coverageD_prohibitedUse", "HOCoverage");
+
+    dataFeildsMap.set("professional", "HOModifier");
+    dataFeildsMap.set("loyalty", "HOModifier");
+
+    console.log("_________________ runing map _________________");
+    // Traversing through each key-value pair
+
+    // Correct way to traverse the Map
+    for (let [key, value] of dataFeildsMap.entries()) {
+        console.log(` ${key},   ${value}`);
+    }
+
+    console.log("________ ending the script _____________");
+};
+
+function updateDataWithTable(dataTable, originalData) {
+    const rows = dataTable.hashes();
+    const updatedDataArray = [];
+
+    for (const row of rows) {
+        let updatedData = { ...originalData };
+        for (const key in row) {
+            if (row.hasOwnProperty(key)) {
+                updatedData[key.toLowerCase()] = row[key];
+                updatedData[key] = row[key];
+            }
+        }
+        updatedDataArray.push(updatedData);
+    }
+
+    return updatedDataArray;
+}
+
+
+const printAuthorName= ()=>{
+    console.log("This package is developed and maintained by vineet kumar rajak");
+}
+
+// printMap();
+
+module.exports = { updateDataWithTable, printMap };

@@ -1,0 +1,19 @@
+{
+  "name": "test-npm-repo-gt-ex",
+  "version": "1.0.0",
+  "description": "test repository for testing npm package",
+  "main": "index,js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkrajak39/test-npm-repo-gt-ex.git"
+  },
+  "author": "vineet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkrajak39/test-npm-repo-gt-ex/issues"
+  },
+  "homepage": "https://github.com/vkrajak39/test-npm-repo-gt-ex#readme"
+}
